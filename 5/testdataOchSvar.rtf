@@ -1,0 +1,362 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2709
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fswiss\fcharset0 Helvetica;\f2\fswiss\fcharset0 Helvetica-Oblique;
+}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 Kompletterande fr\'e5gor:
+\f1\b0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f2\i \cf0 - Finns det n\'e5gon anledning varf\'f6r vi ber\'e4knar b\'e5de det absoluta och det relativa histogrammet i samma funktionsanrop?\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f1\i0 \cf0 I det h\'e4r fallet, att b\'e5de det absoluta och relativa histogrammet ber\'e4knas i samma funktionsanrop kan ses som en form av abstraktion. Anv\'e4ndaren beh\'f6ver inte f\'f6rst\'e5 detaljerna i hur dessa histogram ber\'e4knas. Ist\'e4llet kan de bara anropa en funktion och f\'e5r de ber\'e4knade histogrammen.
+\f2\i \
+\
+- T\'e4nk dig att vi l\'e4gger till en rad sist i huvudprogrammet som anropar funktionen setText med en ny text, d\'e5 f\'e5r vi resultatet att attributet text \'e4ndras, men histogrammen fortfarande \'e4r desamma och allts\'e5 inte h\'f6r ihop med den aktuella texten. Finns det n\'e5got s\'e4tt att l\'f6sa det problemet? Du beh\'f6ver bara svara med ord, inte programmera n\'e5got nytt.\
+\
+
+\f1\i0 Vi kan addera en funktion som uppdaterar histogrammen varje g\'e5ng `setText()` kallas, t.ex. genom att anropa `beraknaHistogram()` inuti `setText()` ist\'e4llet f\'f6r i main-programmet.\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f2\i \cf0 \
+- Skulle man kunna inkludera funktionerna namn_pa_fil och inlasning i klassen? Skulle det g\'f6ra n\'e5gon skillnad p\'e5 resultatet? Finns det n\'e5gra f\'f6rdelar med att anv\'e4nda samma funktioner som tidigare?\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f1\i0 \cf0 \
+Inkludering av funktionerna i klassen skulle inte f\'f6r\'e4ndra resultatet, men det kan organisera kodstrukturen mer effektivt. Att \'e5teranv\'e4nda dessa befintliga, testade funktioner kan vara f\'f6rdelaktigt d\'e5 det minimerar behovet av att skapa och validera ny kod.\
+\
+
+\f0\b \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97DELUPPGIFT A\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97
+\f1\b0 \
+=================================\
+Testdata 1\
+=================================\
+\pard\tx593\pardeftab593\partightenfactor0
+\cf0 Ge en rad med text:\
+AbCdNNooPPwXyZ\
+A: 1\
+B: 1\
+C: 1\
+D: 1\
+E: 0\
+F: 0\
+G: 0\
+H: 0\
+I: 0\
+J: 0\
+K: 0\
+L: 0\
+M: 0\
+N: 2\
+O: 2\
+P: 2\
+Q: 0\
+R: 0\
+S: 0\
+T: 0\
+U: 0\
+V: 0\
+W: 1\
+X: 1\
+Y: 1\
+Z: 1\
+Program ended with exit code: 0\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 =================================\
+Testdata 2\
+=================================\
+Ge en rad med text:\
+1234ddddacccbb!?\
+A: 1\
+B: 2\
+C: 3\
+D: 4\
+E: 0\
+F: 0\
+G: 0\
+H: 0\
+I: 0\
+J: 0\
+K: 0\
+L: 0\
+M: 0\
+N: 0\
+O: 0\
+P: 0\
+Q: 0\
+R: 0\
+S: 0\
+T: 0\
+U: 0\
+V: 0\
+W: 0\
+X: 0\
+Y: 0\
+Z: 0\
+Program ended with exit code: 0\
+\
+=================================\
+Testdata 3\
+=================================\
+Ge en rad med text:\
+Denna rad inneh\'e5ller ett \'e5!\
+A: 2\
+B: 0\
+C: 0\
+D: 2\
+E: 4\
+F: 0\
+G: 0\
+H: 1\
+I: 1\
+J: 0\
+K: 0\
+L: 2\
+M: 0\
+N: 4\
+O: 0\
+P: 0\
+Q: 0\
+R: 2\
+S: 0\
+T: 2\
+U: 0\
+V: 0\
+W: 0\
+X: 0\
+Y: 0\
+Z: 0\
+Program ended with exit code: 0\
+\
+=================================\
+Testdata 4\
+=================================\
+Ge en rad med text:\
+\
+A: 0\
+B: 0\
+C: 0\
+D: 0\
+E: 0\
+F: 0\
+G: 0\
+H: 0\
+I: 0\
+J: 0\
+K: 0\
+L: 0\
+M: 0\
+N: 0\
+O: 0\
+P: 0\
+Q: 0\
+R: 0\
+S: 0\
+T: 0\
+U: 0\
+V: 0\
+W: 0\
+X: 0\
+Y: 0\
+Z: 0\
+Program ended with exit code: 0\
+\
+\
+
+\f0\b \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97DELUPPGIFT B\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97
+\f1\b0 \
+=================================\
+Testdata 1\
+=================================\
+Ange ett filnamn: \
+/Users/filipsjostrand/Downloads/Doyle\
+Bokstavsf\'f6rdelning:\
+A: ****************\
+B: **\
+C: ******\
+D: *******\
+E: ************************\
+F: ****\
+G: **\
+H: ************\
+I: ***************\
+J: \
+K: *\
+L: *******\
+M: *****\
+N: ************\
+O: ***************\
+P: ***\
+Q: \
+R: ***********\
+S: ************\
+T: ******************\
+U: *****\
+V: **\
+W: ****\
+X: \
+Y: ****\
+Z: \
+\
+Resultat f\'f6r bokst\'e4verna A-Z\
+\
+Totala antalet bokst\'e4ver: 12885\
+Engelska har kvadratsumma =  1.75771\
+Franska har kvadratsumma =  96.1956\
+Svenska har kvadratsumma =  73.3371\
+Tyska har kvadratsumma =  116.072\
+Det \'e4r mest troligt att spr\'e5ket \'e4r Engelska\
+\
+Program ended with exit code: 0\
+\
+=================================\
+Testdata 2\
+=================================\
+\pard\tx593\pardeftab593\partightenfactor0
+\cf0 Ange ett filnamn: \
+/Users/filipsjostrand/Downloads/goethe.txt\
+Bokstavsf\'f6rdelning:\
+A: **********\
+B: ***\
+C: *******\
+D: *********\
+E: *********************************\
+F: **\
+G: ******\
+H: ***********\
+I: *****************\
+J: \
+K: **\
+L: ******\
+M: ******\
+N: *********************\
+O: ****\
+P: \
+Q: \
+R: ************\
+S: *************\
+T: ***********\
+U: *******\
+V: *\
+W: ***\
+X: \
+Y: *\
+Z: **\
+\
+Resultat f\'f6r bokst\'e4verna A-Z\
+\
+Totala antalet bokst\'e4ver: 14027\
+Engelska har kvadratsumma =  107.856\
+Franska har kvadratsumma =  85.205\
+Svenska har kvadratsumma =  160.318\
+Tyska har kvadratsumma =  1.04313\
+Det \'e4r mest troligt att spr\'e5ket \'e4r Tyska\
+\
+Program ended with exit code: 0\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+=================================\
+Testdata 3\
+=================================\
+\pard\tx593\pardeftab593\partightenfactor0
+\cf0 Ange ett filnamn: \
+/Users/filipsjostrand/Downloads/lagerlof\
+Bokstavsf\'f6rdelning:\
+A: **********************\
+B: *\
+C: **\
+D: ***********\
+E: *******************\
+F: ****\
+G: ********\
+H: *******\
+I: ********\
+J: **\
+K: ******\
+L: **********\
+M: *******\
+N: ******************\
+O: ********\
+P: **\
+Q: \
+R: **************\
+S: *************\
+T: *****************\
+U: ***\
+V: ******\
+W: \
+X: \
+Y: \
+Z: \
+\
+Resultat f\'f6r bokst\'e4verna A-Z\
+\
+Totala antalet bokst\'e4ver: 12221\
+Engelska har kvadratsumma =  86.6804\
+Franska har kvadratsumma =  145.722\
+Svenska har kvadratsumma =  8.88258\
+Tyska har kvadratsumma =  170.223\
+Det \'e4r mest troligt att spr\'e5ket \'e4r Svenska\
+\
+Program ended with exit code: 0\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+=================================\
+Testdata 4\
+=================================\
+\pard\tx593\pardeftab593\partightenfactor0
+\cf0 Ange ett filnamn: \
+/Users/filipsjostrand/Downloads/verne.txt\
+Bokstavsf\'f6rdelning:\
+A: ****************\
+B: **\
+C: *******\
+D: ********\
+E: **********************************\
+F: *\
+G: **\
+H: *\
+I: *************\
+J: \
+K: \
+L: **********\
+M: *****\
+N: ***************\
+O: **********\
+P: *****\
+Q: *\
+R: *************\
+S: ****************\
+T: *************\
+U: ***********\
+V: **\
+W: \
+X: *\
+Y: \
+Z: \
+\
+Resultat f\'f6r bokst\'e4verna A-Z\
+\
+Totala antalet bokst\'e4ver: 11417\
+Engelska har kvadratsumma =  112.425\
+Franska har kvadratsumma =  0.885142\
+Svenska har kvadratsumma =  149.256\
+Tyska har kvadratsumma =  90.491\
+Det \'e4r mest troligt att spr\'e5ket \'e4r Franska\
+\
+Program ended with exit code: 0\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+=================================\
+Testdata 5\
+=================================\
+Ange ett filnamn: \
+test123\
+Det finns ingen fil med namnet test123.txt\
+Program ended with exit code: 1}

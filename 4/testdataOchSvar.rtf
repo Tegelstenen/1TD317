@@ -1,0 +1,204 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2709
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fswiss\fcharset0 Helvetica;\f2\fswiss\fcharset0 Helvetica-Oblique;
+}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 Kompletterande fr\'e5gor:
+\f1\b0 \
+
+\f2\i - I l\'f6sningsf\'f6rslagen tipsar vi om att du ska skapa/ladda hem en fil med bara lite inneh\'e5ll medan man testar sitt program. Varf\'f6r, tror du?\
+
+\f1\i0 \
+Rimligen \'e4r det bra att b\'f6rja enkelt f\'f6r att sedan bygga vidare. Till exempel, n\'e4r man s\'e4kerst\'e4llt att bokst\'a8\'e5ver funkar som t\'e4nk kan man b\'f6rja addera siffror i texten ocks\'e5 f\'f6r att s\'a8kerst\'e4lla korrekt hantering av dessa med. Om man matar in allting p\'e5 samma g\'e5ng kan det bli sv\'e5rt att identifiera vart problemet ligger.\
+\
+
+\f2\i - Texten i filen lagerlof.txt inneh\'e5ller de svenska bokst\'e4verna \'e5, \'e4 och \'f6. Som programmet fungerar nu r\'e4knas inte dessa bokst\'e4ver med alls. Hur skulle man g\'e5 tillv\'e4ga f\'f6r att ocks\'e5 inkludera \'e5, \'e4 och \'f6 i histogrammet. Du beh\'f6ver inte ge en program-l\'f6sning, men resonera kring hur man skulle kunna g\'f6ra.\
+
+\f1\i0 \
+F\'f6r det f\'f6rsta beh\'f6ver man f\'f6rl\'e4nga alfabetet till 29, lika s\'e5 `TOLK_HJALP` beh\'f6ver ut\'f6kas f\'f6r varje spr\'e5k. F\'f6r det andra beh\'f6ver vi mappa \'93\'e5\'94, \'93\'e4\'94, och \'93\'f6\'94  i `berakna_histogram_abs()` till 26, 27, och 28 m.h.a. en switch sats.
+\f2\i \
+
+\f1\i0 \
+=================================\
+Testdata 1\
+=================================\
+Ange ett filnamn: \
+/Users/filipsjostrand/Downloads/doyle\
+\
+Resultat f\'f6r bokst\'e4verna A-Z\
+\
+Totala antalet bokst\'e4ver: 12885\
+Engelska har kvadratsumma =  1.75771\
+Franska har kvadratsumma =  96.1956\
+Svenska har kvadratsumma =  73.3371\
+Tyska har kvadratsumma =  116.072\
+Det \'e4r mest troligt att spr\'e5ket \'e4r Engelska\
+\
+Bokstavsf\'f6rdelning:\
+A: ****************\
+B: **\
+C: ******\
+D: *******\
+E: ************************\
+F: ****\
+G: **\
+H: ************\
+I: ***************\
+J: \
+K: *\
+L: *******\
+M: *****\
+N: ************\
+O: ***************\
+P: ***\
+Q: \
+R: ***********\
+S: ************\
+T: ******************\
+U: *****\
+V: **\
+W: ****\
+X: \
+Y: ****\
+Z: \
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 =================================\
+Testdata 2\
+=================================\
+Ange ett filnamn: \
+/Users/filipsjostrand/Downloads/goethe.txt\
+\
+Resultat f\'f6r bokst\'e4verna A-Z\
+\
+Totala antalet bokst\'e4ver: 14027\
+Engelska har kvadratsumma =  107.856\
+Franska har kvadratsumma =  85.205\
+Svenska har kvadratsumma =  160.318\
+Tyska har kvadratsumma =  1.04313\
+Det \'e4r mest troligt att spr\'e5ket \'e4r Tyska\
+\
+Bokstavsf\'f6rdelning:\
+A: **********\
+B: ***\
+C: *******\
+D: *********\
+E: *********************************\
+F: **\
+G: ******\
+H: ***********\
+I: *****************\
+J: \
+K: **\
+L: ******\
+M: ******\
+N: *********************\
+O: ****\
+P: \
+Q: \
+R: ************\
+S: *************\
+T: ***********\
+U: *******\
+V: *\
+W: ***\
+X: \
+Y: *\
+Z: **\
+\
+=================================\
+Testdata 3\
+=================================\
+Ange ett filnamn: \
+/Users/filipsjostrand/Downloads/lagerlof\
+\
+Resultat f\'f6r bokst\'e4verna A-Z\
+\
+Totala antalet bokst\'e4ver: 12221\
+Engelska har kvadratsumma =  86.6804\
+Franska har kvadratsumma =  145.722\
+Svenska har kvadratsumma =  8.88258\
+Tyska har kvadratsumma =  170.223\
+Det \'e4r mest troligt att spr\'e5ket \'e4r Svenska\
+\
+Bokstavsf\'f6rdelning:\
+A: **********************\
+B: *\
+C: **\
+D: ***********\
+E: *******************\
+F: ****\
+G: ********\
+H: *******\
+I: ********\
+J: **\
+K: ******\
+L: **********\
+M: *******\
+N: ******************\
+O: ********\
+P: **\
+Q: \
+R: **************\
+S: *************\
+T: *****************\
+U: ***\
+V: ******\
+W: \
+X: \
+Y: \
+Z: \
+\
+=================================\
+Testdata 4\
+=================================\
+Ange ett filnamn: \
+/Users/filipsjostrand/Downloads/verne.txt\
+\
+Resultat f\'f6r bokst\'e4verna A-Z\
+\
+Totala antalet bokst\'e4ver: 11417\
+Engelska har kvadratsumma =  112.425\
+Franska har kvadratsumma =  0.885142\
+Svenska har kvadratsumma =  149.256\
+Tyska har kvadratsumma =  90.491\
+Det \'e4r mest troligt att spr\'e5ket \'e4r Franska\
+\
+Bokstavsf\'f6rdelning:\
+A: ****************\
+B: **\
+C: *******\
+D: ********\
+E: **********************************\
+F: *\
+G: **\
+H: *\
+I: *************\
+J: \
+K: \
+L: **********\
+M: *****\
+N: ***************\
+O: **********\
+P: *****\
+Q: *\
+R: *************\
+S: ****************\
+T: *************\
+U: ***********\
+V: **\
+W: \
+X: *\
+Y: \
+Z: \
+\
+=================================\
+Testdata 5\
+=================================\
+Ange ett filnamn: \
+finnsEj\
+Det finns ingen fil med namnet finnsEj.txt\
+}
